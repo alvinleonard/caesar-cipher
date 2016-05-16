@@ -1,6 +1,6 @@
 {
   "name": "caesar-cipher-al",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Caesar Cipher Implementation in JavaScript",
   "main": "caesar.js",
   "scripts": {
