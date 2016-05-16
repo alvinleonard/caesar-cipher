@@ -1,21 +1,32 @@
 module.exports = (function Caesar() {
     var alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
+    // A function to calculate the new index of the shifted character in the given
+    // 'alphabet' series.
+    function calcShiftIndex(idx, shift, alphabet) {
+        var newIdx;
+        newIdx = (idx + shift) % alphabet.length;
+        if (newIdx < 0) {
+            newIdx += alphabet.length;
+        }
+        return newIdx;
+    }
+
     function rotate(input, shift) {
-        var out= '', c, idx;
-        
+        var out = '', c, idx;
+
         for (var i = 0; i < input.length; i++) {
             c = input.charAt(i);
             if ((idx = alphabet.indexOf(c)) >= 0) {
-                idx = (idx + shift) % alphabet.length;
-                if (idx < 0) {
-                    idx += alphabet.length;
-                }
+                idx = calcShiftIndex(idx, shift, alphabet);
                 c = alphabet.charAt(idx);
+            } else if ((idx = alphabet.indexOf(c.toLowerCase())) >= 0) {
+                idx = calcShiftIndex(idx, shift, alphabet);
+                c = alphabet.charAt(idx).toUpperCase();
             }
             out += c;
         }
-        
+
         return out;
     }
 

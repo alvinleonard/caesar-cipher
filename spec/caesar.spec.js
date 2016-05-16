@@ -48,4 +48,16 @@ describe('Caesar Cipher', function () {
         expect(encodedText).toEqual('abcdefghijklmnopqrstuvwxyz');
         done();
     });
+    
+    it('encrypt: should handle a mix of upper and lower case', function (done) {
+        var encodedText = caesar.encrypt('AbcdefghijklmnopqrstuvwxyZ', 3);
+        expect(encodedText).toEqual('DefghijklmnopqrstuvwxyzabC');
+        done();
+    });
+    
+    it('decrypt: should handle a mix of upper and lower case', function (done) {
+        var encodedText = caesar.decrypt('DefghijklmnopqrstuvwxyzabC', 3);
+        expect(encodedText).toEqual('AbcdefghijklmnopqrstuvwxyZ');
+        done();
+    });
 });
