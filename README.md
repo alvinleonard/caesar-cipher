@@ -13,8 +13,8 @@ npm install caesar-cipher-al
 var caesar = require('caesar-cipher-al');
 
 //encrypt  
-var encrypted = caesar.encrypt('hello world', 5);
+var encrypted = caesar.encrypt('hello world', 3);
 
 //decrypt
-var decrypted = caesar.decrypt('khoor zruog', 5);
+var decrypted = caesar.decrypt('khoor zruog', 3);
 ```
